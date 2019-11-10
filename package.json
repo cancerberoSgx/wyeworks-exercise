@@ -1,8 +1,9 @@
 {
-  "name": "wyelabs",
+  "name": "bob",
+  "description": "Group artists albums in trello boards. API and CLI support",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
   "scripts": {
     "test": "npm run build && npx ava",
     "build": "npm run clean && npx tsc",

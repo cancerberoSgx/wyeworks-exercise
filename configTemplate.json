@@ -1,0 +1,10 @@
+{
+  "trello": {
+    "key": "FILL_ME",
+    "token": "FILL_ME"
+  },
+  "spotify": {
+    "key": "FILL_ME",
+    "token": "FILL_ME"
+  }
+}
