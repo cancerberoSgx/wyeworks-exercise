@@ -1,6 +1,6 @@
 import test from 'ava'
-import { parse, parseAndGroup } from '../src/data'
 import { readFileSync } from 'fs';
+import { parse, parseAndGroup } from '../src'
 
 test('parse', async t => {
   const data = parse(readFileSync('test/assets/discography.txt').toString())
