@@ -1,8 +1,8 @@
-import {  Options, Grouped, Data } from "./types";
+import {  ParseAndGroupOptions, Grouped, Data } from "./types";
 import { notUndefined } from './util';
 
 
-export function parseAndGroup(options: Options) {
+export function parseAndGroup(options: ParseAndGroupOptions) {
   return group(parse(options.input), options.lapse)
 }
 
