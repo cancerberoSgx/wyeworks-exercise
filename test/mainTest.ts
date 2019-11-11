@@ -14,7 +14,10 @@ test('main', async t => {
      boardName
     }
   const result = await main(options)
-  console.log(result)
+  // console.log(result)
   writeFileSync('tmp.txt', JSON.stringify(result))
   t.deepEqual(result.board.name, boardName)
+  t.deepEqual(result.lists.length, 6)
+  t.true(!!result.lists.find((l:any)=>l.name==='2000'))
+
 })
