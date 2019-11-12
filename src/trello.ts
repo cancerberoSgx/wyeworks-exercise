@@ -13,7 +13,12 @@ export async function newBoard(board: Board, config = trelloConfig) {
 }
 
 export async function newCard(card: Card, config = trelloConfig) {
-  const url = `https://api.trello.com/1/cards?name=${encodeURIComponent(card.name)}&idList=${card.idList}&keepFromSource=all&key=${config.key}&token=${config.token}`
+  const url = `https://api.trello.com/1/cards?name=${encodeURIComponent(card.name)}&desc=${encodeURIComponent('TODO123<strong>hello</strong>')}&idList=${card.idList}&keepFromSource=all&key=${config.key}&token=${config.token}`
+  return await fetchAndRead(url, 'post')
+}
+
+export async function addCardAttachment(cardId: string, attachmentUrl: string, config = trelloConfig) {
+  const url = `https://api.trello.com/1/cards/${cardId}/attachments?url=${encodeURIComponent(attachmentUrl)}&key=${config.key}&token=${config.token}`
   return await fetchAndRead(url, 'post')
 }
 

@@ -38,5 +38,5 @@ export interface ParseAndGroupOptions {
 }
 
 export interface MainOptions extends Config, ParseAndGroupOptions {
-  boardName: string
+  artistName: string
 }
