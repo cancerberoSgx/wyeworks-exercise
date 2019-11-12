@@ -1,3 +1,9 @@
+### Notes
+
+ * The program will take any input file with a syntax like given `discography.txt`
+ * It accepts an artist name which will be used to name the trello board
+ * All the tasks are performed serially. I know they could be performed in parallel and this could be faster, but since the number of albums are unknown, I decided to implement it serially to avoid concurrent request limits in trello / spotify APIs. 
+
 ### Usage
 
 To install project dependencies and run the exercise using example `discography.txt` data use:
