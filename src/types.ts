@@ -27,7 +27,7 @@ export type Grouped = {
 
 export interface Config { 
   trello: { key: string, token: string }, 
-  spotify: { key: string, token: string } 
+  spotify: { id: string, secret: string } 
 }
 
 export interface ParseAndGroupOptions {

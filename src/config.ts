@@ -1,6 +1,7 @@
 import { existsSync, readFileSync } from 'fs';
+import { Config } from './types';
 
-export function getConfig(path='config.json'){
+export function getConfig(path='config.json'): Config{
   if(!existsSync(path)){
     throw new Error('Expected file '+path+' to exist')
   }
