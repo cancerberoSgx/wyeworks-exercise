@@ -1,9 +1,7 @@
 // use cross-fetch so by only fixing the urls browser could easily by supported.
 
 import { Config } from '.'
-import { fetchAndRead } from './util';
-import { Board, List, Card } from './types';
-import { getConfig } from './config';
+import { Board, List, Card , getConfig, fetchAndRead} from '.';
 
 const trelloConfig: Config['trello'] = getConfig().trello
 

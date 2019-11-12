@@ -1,6 +1,4 @@
-import {  ParseAndGroupOptions, Grouped, Data } from "./types";
-import { notUndefined } from './util';
-
+import { ParseAndGroupOptions, Grouped, Data, notUndefined } from ".";
 
 export function parseAndGroup(options: ParseAndGroupOptions) {
   return group(parse(options.input), options.lapse)
@@ -12,10 +10,6 @@ export function parse(content: string) {
     .filter(notUndefined)
     .map(r => ({ year: parseInt(r[1]), name: r[2] }))
 }
-
-// export function parseFile(path: string) {
-//   return parse(readFileSync(path).toString())
-// }
 
 export function group(data: Data[], lapse = 10) {
   const grouped: Grouped = {}

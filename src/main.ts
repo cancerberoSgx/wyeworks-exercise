@@ -1,9 +1,9 @@
-import { Config, ParseAndGroupOptions, MainOptions } from './types';
-import { parseAndGroup } from './data';
-import { getConfig } from './config';
-import { newBoard, newList, newCard, addCardAttachment } from './trello';
-import { serial } from './util';
-import { searchAlbum, searchAlbumCover } from './spotify';
+import { getConfig } from './config'
+import { parseAndGroup } from './data'
+import { searchAlbumCover } from './spotify'
+import { addCardAttachment, newBoard, newCard, newList } from './trello'
+import { MainOptions } from './types'
+import { serial } from './util'
 
 const defaultOptions = {
   ...getConfig(),
@@ -17,14 +17,14 @@ export async function main(options: MainOptions) {
   const lists = await serial(Object.keys(grouped).sort().map(lapse => async () => {
     const list = await newList({ idBoard: board.id, name: lapse }, options.trello)
     const cards = await serial(grouped[parseInt(lapse)].map(album => async () => {
-       const card = await newCard({ idList: list.id, name: album.name }, options.trello)
-       const cover = await searchAlbumCover(album.name, options.artistName, options.spotify)
-       if(cover){
+      const card = await newCard({ idList: list.id, name: album.name }, options.trello)
+      const cover = await searchAlbumCover(album.name, options.artistName, options.spotify)
+      if (cover) {
         await addCardAttachment(card.id, cover, options.trello)
-       }
-       return card 
+      }
+      return card
     }))
-    return {list, cards}
+    return { list, cards }
   }))
-  return {board, lists}
+  return { board, lists }
 }

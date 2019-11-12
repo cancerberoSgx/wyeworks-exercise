@@ -9,7 +9,7 @@ npm start
 
 ### Configuration
 
-Create `config.json` file with trello and spotify authentication information. Use configTemplate.json as a template:
+Create `config.json` file with trello and spotify authentication information. Use `configTemplate.json` as a template:
 
 ```json
 {
@@ -23,3 +23,9 @@ Create `config.json` file with trello and spotify authentication information. Us
   }
 }
 ```
+
+### Result
+
+After execution a trello board like the following should be created: 
+
+![Resulting trello board example](trello_screenshot.png)
